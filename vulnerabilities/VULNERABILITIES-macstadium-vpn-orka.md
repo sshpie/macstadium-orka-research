@@ -840,5 +840,5 @@ orka-engine image push --username <actor> --password $GITHUB_TOKEN \
 - **Ablation modules run:** saml-sp-all, saml-metadata, cstp-all, tunnel-groups-all, asa-version-all, webvpn-js-all, orka-binary-re, oidc-discovery, radius-re-all, radius-coa, username-oracle-all, cert-map-all, crl-bypass-all, go-re, jwt (forge), orka-oidc
 - **Prior MacStadium assessment:** `~/VDT/assessments/MACSTADIUM-INFRASTRUCTURE-ASSESSMENT.md`
 
-**Assessor:** NuClide VDT Pipeline
+**Assessor:**  VDT Pipeline
 **Assessment complete:** 2026-08-17 19:55 CDT

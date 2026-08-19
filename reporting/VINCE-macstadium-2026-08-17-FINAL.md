@@ -6,7 +6,7 @@
 
 ## Submitter Information
 
-**Name:** Nicholas Kloster
+**Name:** 
 **Organization:** Independent Security Researcher
 **Prior disclosures:** CVE-2025-4364 (CISA ICSA-25-140-11)
 **Discovery dates:** 2026-08-11 through 2026-08-17
@@ -292,7 +292,7 @@ JWT PROOF CONSTRUCTION:
   No tokens submitted to live Orka API.
 
 Discovery dates: 2026-08-11 (infrastructure enumeration) through 2026-08-17 (binary RE, proof construction).
-Submitter: Nicholas Kloster, independent security researcher. Prior CISA disclosure: CVE-2025-4364 (ICSA-25-140-11).
+Submitter: , independent security researcher. Prior CISA disclosure: CVE-2025-4364 (ICSA-25-140-11).
 
 ---
 

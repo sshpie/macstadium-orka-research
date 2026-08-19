@@ -5,9 +5,9 @@
 
 ## Submitter Information
 
-**Name:** Nicholas Kloster  
+**Name:**   
 **Organization:** Independent Security Researcher  
-**Email:** nicholas@nuclide-research.com  
+**Email:**   
 **Prior disclosures:** CVE-2025-4364 (CISA ICS-CERT ICSA-25-140-11)  
 **Discovery date:** 2026-08-11 through 2026-08-17  
 **Disclosure method:** Coordinated — submitting to CERT/CC for vendor notification
@@ -587,8 +587,8 @@ The researcher requests coordinated disclosure through CERT/CC and is available 
 
 ---
 
-**Nicholas Kloster**  
+****  
 Independent Security Researcher  
-nicholas@nuclide-research.com  
+  
 CVE-2025-4364 / ICSA-25-140-11  
 2026-08-17

@@ -395,6 +395,6 @@ Assessment of two MacStadium-affiliated targets: a customer healthcare applicati
 ---
 
 **Assessment Complete:** 2026-08-11 21:05 CDT  
-**Assessor:** NuClide VDT Pipeline  
+**Assessor:**  VDT Pipeline  
 **Authorization:** VDT BASELINE v2 - Full Active Testing  
 **Total Assessment Time:** ~3 hours (reconnaissance + documentation)

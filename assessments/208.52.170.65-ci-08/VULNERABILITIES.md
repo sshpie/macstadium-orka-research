@@ -160,4 +160,4 @@ Same exposure as M1 Mac F4: port 88 open, LKDC realm, AS-REQ enumeration and AS-
 ---
 
 **Assessment Complete:** 2026-08-17
-**Assessor:** NuClide VDT Pipeline
+**Assessor:**  VDT Pipeline
