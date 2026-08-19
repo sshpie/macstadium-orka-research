@@ -2,7 +2,7 @@
 """
 locust-macstadium-207254.py — MacStadium Orka/collabd Attack Swarm
 Target: 207.254.55.84 (collabd :8087) + Harbor Registry
-VDT Authorization: Active exploitation authorized — zellkernel
+VDT Authorization: Active exploitation authorized — sshpie
 
 Modes:
   collabd   — path enum + auth brute on Twisted collabd :8087
