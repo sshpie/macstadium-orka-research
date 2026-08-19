@@ -1,7 +1,6 @@
 # MacStadium Orka3 — Security Research
 
-**Researcher:** Nicholas Kloster — nicholas@nuclide-research.com  
-**Period:** 2026-08-11 through 2026-08-19  
+
 **Targets:** MacStadium Orka3 platform, AnyConnect VPN infrastructure, M1 build fleet, Harbor OCI registry  
 **Method:** Binary RE, public GitHub repository analysis, passive network enumeration, package extraction  
 **Authorization:** No unauthorized access to live systems. All artifacts publicly downloadable.
