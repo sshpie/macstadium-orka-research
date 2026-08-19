@@ -3,9 +3,7 @@
 
 **Targets:** MacStadium Orka3 platform, AnyConnect VPN infrastructure, M1 build fleet, Harbor OCI registry  
 **Method:** Binary RE, public GitHub repository analysis, passive network enumeration, package extraction  
-**Authorization:** No unauthorized access to live systems. All artifacts publicly downloadable.
 
-**Disclosure status:** VINCE VRF#26-08-DYBJT submitted 2026-08-18. CERT/CC closed, requesting direct vendor contact first. Next step: `support@macstadium.com` + Apple's security page.
 
 ---
 
