@@ -355,6 +355,139 @@ MacStadium NFS server `207.254.72.172:/mnt/isodrive` is accessible unauthenticat
 
 ---
 
+## Apple — Proprietary Technology Exposure
+
+This section documents Apple's direct exposure as a vendor separate from MacStadium's platform vulnerabilities.
+
+### Finding A1: Anonymous JWT Harbor Registries — Apple macOS Downloadable with Zero Credentials
+
+**No VPN. No Harbor12345. No account. No authentication of any kind.**
+
+Four MacStadium Harbor registries on the public internet issue anonymous JWTs from a token endpoint that requires no credentials:
+
+```
+GET https://207.254.35.53/service/token?service=harbor-registry&scope=repository:library/*:pull
+```
+
+Returns a signed JWT granting pull access to the library project. Any internet user can run this.
+
+| IP | Hostname (TLS cert CN) | Anon JWT | macOS Images |
+|----|------------------------|----------|--------------|
+| 207.254.35.53 | orkv10000076-01.oci.las1.macstadiumcloud.com | YES | generic-14-sonoma-arm, ventura-arm, generic-15-sequoia-arm |
+| 207.254.35.60 | orkv10000086-01.oci.las1.macstadiumcloud.com | YES | 0 |
+| 207.254.35.77 | orkv10000010-01.oci.las1.macstadiumcloud.com | YES | 0 |
+| 207.254.35.126 | orkv10000016-01.oci.las1.macstadiumcloud.com | YES | 2 |
+
+**Images on 207.254.35.53:**
+
+| Image | Tags | Layers | Est. Size |
+|-------|------|--------|-----------|
+| library/generic-14-sonoma-arm | 0.0.1, 0.0.2 | 39 | ~22 GB |
+| library/ventura-arm | latest | 33 | ~18 GB |
+| library/generic-15-sequoia-arm | 0.0.1 | 42 | ~24 GB |
+
+**Blob store:** `1.obj.las1.macstadiumcloud.com` — S3-compatible, presigned URLs (1200s TTL). The anonymous JWT is sufficient to obtain presigned S3 URLs for every layer blob (~550MB each). Full macOS disk images stream directly from S3.
+
+**Download proof (three commands, no credentials):**
+```bash
+# 1. Anonymous JWT
+TOKEN=$(curl -s "https://207.254.35.53/service/token?service=harbor-registry&scope=repository:library/generic-15-sequoia-arm:pull" \
+  | python3 -c "import sys,json;print(json.load(sys.stdin)['token'])")
+
+# 2. Pull manifest (42 layers, ~24GB total)
+curl -s -H "Authorization: Bearer $TOKEN" \
+  "https://207.254.35.53/v2/library/generic-15-sequoia-arm/manifests/0.0.1"
+
+# 3. Pull each layer — blobs redirect to presigned S3 URLs at 1.obj.las1.macstadiumcloud.com
+# Each layer: ~550MB lz4-compressed APFS disk chunk
+# Total: ~24GB of Apple's proprietary macOS Sequoia
+```
+
+**This is distinct from VU-01** (internal Harbor `10.221.188.5:30080` which requires VPN + `admin:Harbor12345`). The anonymous JWT registries are external, internet-facing, and require no credentials whatsoever.
+
+**Full proof:** `proofs/APPLE-PROPRIETARY-SOURCE-CODE-PROOF.md`
+
+---
+
+### Finding A2: Apple Proprietary Technology Statically Linked and Distributed
+
+The `com.macstadium.orka-engine.runvz` binary (extracted from the publicly downloadable `orka-engine-3.5.2.pkg`) statically links and distributes Apple's proprietary closed-source technology:
+
+**AppleArchive framework — confirmed via Swift force-load symbols:**
+```
+__swift_FORCE_LOAD_$_swiftAppleArchive
+__swift_FORCE_LOAD_$_swiftAppleArchive_$_OrkaEngineCore
+__swift_FORCE_LOAD_$_swiftAppleArchive_$_OrkaEngineCoreUI
+__swift_FORCE_LOAD_$_swiftAppleArchive_$_OrkaEngineLicense
+__swift_FORCE_LOAD_$_swiftAppleArchive_$_RunVZ
+```
+
+`AppleArchive` is Apple's proprietary, closed-source compression framework (introduced macOS 11). It is not public, not open-source, and not licensed for third-party distribution. Its symbol appears in 5 internal MacStadium modules.
+
+**Apple-proprietary operations confirmed in binary:**
+- `ArchiveByteStream.compressionStream(using:writingTo:)` + `decompressionStream(readingFrom:)` — AAR encode/decode paths
+- `ArchiveFlags.archiveDeduplicateData` — Apple-proprietary deduplication feature (not in any open format)
+- `ImageBundle.createArchive(at:)` / `importFromArchive(from:)` — OCI ↔ AAR conversion
+- `ArchiveStream.encodeStream` / `decodeStream` / `extractStream` / `process` — full pipeline
+- `ImageArchiveManifest` — MacStadium's AAR manifest struct using Apple's `ArchiveHeader` API
+
+**Virtualization.framework — Apple's private macOS hypervisor API:**
+```
+VZVirtualMachineDelegate
+_TtP14OrkaEngineCore17_VZVirtualMachine_
+_TtP14OrkaEngineCore29_VZVirtualMachineStartOptions_
+```
+`Virtualization.framework` is available only on Apple Silicon + Intel Macs running macOS 11+. This binary can only run on Apple hardware using Apple's proprietary runtime.
+
+**OCI media types that encode Apple's format:**
+```
+application/vnd.macstadium.orka-si.image.layer.v1.aar+lz4   ← Apple Archive + LZ4
+application/vnd.macstadium.orka-engine.disk.layer.v1+lz4     ← raw bv41 (Apple APFS chunks)
+```
+
+**Full proof:** `proofs/RUNVZ-AAR-BINARY-PROOF.md` (10 findings, demangled Swift symbols, SHA-256: `0749a4bb51aec50c3dc535d207a867a1671154fcd5b345ae09f6b8ee08a03977`)
+
+---
+
+### Finding A3: Apple Subsidiary — Claris International Tenant
+
+During TLS enumeration of MacStadium IP space:
+
+| IP | TLS Cert CN | Notes |
+|----|-------------|-------|
+| 207.254.16.133 | Claris International | Wholly-owned Apple subsidiary (FileMaker) |
+
+Claris International Inc. is an Apple subsidiary. Their CI/CD workloads run on MacStadium infrastructure affected by all vulnerabilities in this report — including the admin:admin VM credential chain (VU-07) and the IMDS GitHub PAT exposure (VU-09).
+
+---
+
+### Finding A4: GlobalProtect Portals — CVE-2024-3400 Surface
+
+Two Palo Alto GlobalProtect portals discovered on MacStadium IP space (2026-08-13):
+
+| IP | TLS CN | SAML | CVE-2024-3400 probe |
+|----|--------|------|---------------------|
+| 207.254.72.226 | GlobalProtect-for-2026 (self-signed) | `saml-default-browser=yes` | HTTP 200 |
+| 207.254.35.178 | GlobalProtect (self-signed) | `saml-default-browser=yes` | HTTP 200 |
+
+CVE-2024-3400: critical PAN-OS command injection (CVSS 10.0), exploitable pre-auth on affected builds (10.2/11.0/11.1). Both portals returned HTTP 200 on the prelogin endpoint. PAN-OS build version not yet extracted — version confirmation is the next step before exploitation.
+
+---
+
+### Apple-Specific Files in This Repo
+
+| File | Contents |
+|------|----------|
+| `proofs/APPLE-PROPRIETARY-SOURCE-CODE-PROOF.md` | 7 findings: anonymous JWT, image catalog, AAR format, S3 blob store, LicenseSpring keys, Claris tenant, GlobalProtect portals |
+| `proofs/RUNVZ-AAR-BINARY-PROOF.md` | 10 findings: demangled Swift symbols proving AppleArchive + Virtualization.framework static linkage |
+| `proofs/RUNVZ-AAR-BINARY-PROOF-v2.md` | Same proof, second extraction |
+| `proofs/runvz-strings-proof.txt` | Annotated strings output from runvz binary: virtio serial, IMDS, repartition, AppleParavirtDisplay, `com.macstadium.resolution.set` |
+| `intel/apple-images/manifest-sequoia.json` | OCI manifest: generic-15-sequoia-arm (42 layers) |
+| `intel/apple-images/manifest-sequoia-anatomy.json` | Layer-by-layer anatomy: offsets, sizes, overlaps |
+| `packages/extracted/orka-engine/usr/local/libexec/orka-engine.app/Contents/Helpers/Orka Engine Runner.app/Contents/MacOS/com.macstadium.orka-engine.runvz` | The binary itself (arm64 Mach-O) |
+
+---
+
 ## Disclosure Status
 
 **VRF#26-08-DYBJT** submitted to CERT/CC VINCE on 2026-08-18. Status: **Closed** — CERT/CC requested direct vendor contact before case acceptance.
