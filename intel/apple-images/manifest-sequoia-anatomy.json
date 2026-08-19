@@ -1,0 +1,803 @@
+{
+  "manifest_type": "application/vnd.oci.image.manifest.v1+json",
+  "disk_size_full": 96636764160,
+  "disk_size_usage": 26699669504,
+  "disk_size_compressed": 22798385695,
+  "sector_size": 512,
+  "total_sectors": 188743680,
+  "total_layers": 42,
+  "layers_with_offset": 40,
+  "layers_without_offset": 2,
+  "layers_overflow_32bit": 39,
+  "coverage_bytes": 24216515694,
+  "coverage_pct": 25.059319715946913,
+  "gaps": [
+    {
+      "start_bytes": 654352794,
+      "end_bytes": 3825205248,
+      "size_bytes": 3170852454,
+      "contains_critical": [
+        "APFS Container Start (typical)"
+      ]
+    },
+    {
+      "start_bytes": 5039261827,
+      "end_bytes": 5100273664,
+      "size_bytes": 61011837,
+      "contains_critical": [
+        "APFS Container Start (typical)"
+      ]
+    },
+    {
+      "start_bytes": 5730407526,
+      "end_bytes": 5972688896,
+      "size_bytes": 242281370,
+      "contains_critical": [
+        "APFS Container Start (typical)"
+      ]
+    },
+    {
+      "start_bytes": 7178536100,
+      "end_bytes": 7180648448,
+      "size_bytes": 2112348,
+      "contains_critical": [
+        "APFS Container Start (typical)"
+      ]
+    },
+    {
+      "start_bytes": 10228761985,
+      "end_bytes": 10267656192,
+      "size_bytes": 38894207,
+      "contains_critical": [
+        "APFS Container Start (typical)"
+      ]
+    },
+    {
+      "start_bytes": 10870375175,
+      "end_bytes": 10871635968,
+      "size_bytes": 1260793,
+      "contains_critical": [
+        "APFS Container Start (typical)"
+      ]
+    },
+    {
+      "start_bytes": 13887909565,
+      "end_bytes": 13891534848,
+      "size_bytes": 3625283,
+      "contains_critical": [
+        "APFS Container Start (typical)"
+      ]
+    },
+    {
+      "start_bytes": 14485700968,
+      "end_bytes": 14495514624,
+      "size_bytes": 9813656,
+      "contains_critical": [
+        "APFS Container Start (typical)"
+      ]
+    },
+    {
+      "start_bytes": 16338499783,
+      "end_bytes": 16978542592,
+      "size_bytes": 640042809,
+      "contains_critical": [
+        "APFS Container Start (typical)"
+      ]
+    },
+    {
+      "start_bytes": 17581276427,
+      "end_bytes": 18052284416,
+      "size_bytes": 471007989,
+      "contains_critical": [
+        "APFS Container Start (typical)"
+      ]
+    },
+    {
+      "start_bytes": 23510573544,
+      "end_bytes": 23555211264,
+      "size_bytes": 44637720,
+      "contains_critical": [
+        "APFS Container Start (typical)"
+      ]
+    },
+    {
+      "start_bytes": 24146559777,
+      "end_bytes": 24360517632,
+      "size_bytes": 213957855,
+      "contains_critical": [
+        "APFS Container Start (typical)"
+      ]
+    },
+    {
+      "start_bytes": 24987847615,
+      "end_bytes": 25367150592,
+      "size_bytes": 379302977,
+      "contains_critical": [
+        "APFS Container Start (typical)"
+      ]
+    },
+    {
+      "start_bytes": 26006330230,
+      "end_bytes": 26239565824,
+      "size_bytes": 233235594,
+      "contains_critical": [
+        "APFS Container Start (typical)"
+      ]
+    },
+    {
+      "start_bytes": 27436690619,
+      "end_bytes": 27581743104,
+      "size_bytes": 145052485,
+      "contains_critical": [
+        "APFS Container Start (typical)"
+      ]
+    },
+    {
+      "start_bytes": 28216764148,
+      "end_bytes": 28991029248,
+      "size_bytes": 774265100,
+      "contains_critical": [
+        "APFS Container Start (typical)"
+      ]
+    },
+    {
+      "start_bytes": 29622159553,
+      "end_bytes": 91335163904,
+      "size_bytes": 61713004351,
+      "contains_critical": [
+        "APFS Container Start (typical)"
+      ]
+    },
+    {
+      "start_bytes": 92360874522,
+      "end_bytes": 96636764160,
+      "size_bytes": 4275889638,
+      "contains_critical": []
+    }
+  ],
+  "overlaps": [
+    {
+      "layer_a_idx": 1,
+      "layer_b_idx": 2,
+      "overlap_bytes": 44723680,
+      "start_bytes": 4429185024,
+      "end_bytes": 4473908704
+    },
+    {
+      "layer_a_idx": 4,
+      "layer_b_idx": 5,
+      "overlap_bytes": 14716832,
+      "start_bytes": 6576668672,
+      "end_bytes": 6591385504
+    },
+    {
+      "layer_a_idx": 6,
+      "layer_b_idx": 7,
+      "overlap_bytes": 40808011,
+      "start_bytes": 7784628224,
+      "end_bytes": 7825436235
+    },
+    {
+      "layer_a_idx": 7,
+      "layer_b_idx": 8,
+      "overlap_bytes": 25283216,
+      "start_bytes": 8388608000,
+      "end_bytes": 8413891216
+    },
+    {
+      "layer_a_idx": 8,
+      "layer_b_idx": 9,
+      "overlap_bytes": 36633769,
+      "start_bytes": 8992587776,
+      "end_bytes": 9029221545
+    },
+    {
+      "layer_a_idx": 9,
+      "layer_b_idx": 10,
+      "overlap_bytes": 30619198,
+      "start_bytes": 9596567552,
+      "end_bytes": 9627186750
+    },
+    {
+      "layer_a_idx": 12,
+      "layer_b_idx": 13,
+      "overlap_bytes": 52295463,
+      "start_bytes": 11475615744,
+      "end_bytes": 11527911207
+    },
+    {
+      "layer_a_idx": 13,
+      "layer_b_idx": 14,
+      "overlap_bytes": 3203408,
+      "start_bytes": 12079595520,
+      "end_bytes": 12082798928
+    },
+    {
+      "layer_a_idx": 14,
+      "layer_b_idx": 15,
+      "overlap_bytes": 11676989,
+      "start_bytes": 12683575296,
+      "end_bytes": 12695252285
+    },
+    {
+      "layer_a_idx": 15,
+      "layer_b_idx": 16,
+      "overlap_bytes": 13442222,
+      "start_bytes": 13287555072,
+      "end_bytes": 13300997294
+    },
+    {
+      "layer_a_idx": 18,
+      "layer_b_idx": 19,
+      "overlap_bytes": 26151474,
+      "start_bytes": 15099494400,
+      "end_bytes": 15125645874
+    },
+    {
+      "layer_a_idx": 19,
+      "layer_b_idx": 20,
+      "overlap_bytes": 53073985,
+      "start_bytes": 15703474176,
+      "end_bytes": 15756548161
+    },
+    {
+      "layer_a_idx": 22,
+      "layer_b_idx": 23,
+      "overlap_bytes": 40117400,
+      "start_bytes": 18656264192,
+      "end_bytes": 18696381592
+    },
+    {
+      "layer_a_idx": 23,
+      "layer_b_idx": 24,
+      "overlap_bytes": 56035193,
+      "start_bytes": 19260243968,
+      "end_bytes": 19316279161
+    },
+    {
+      "layer_a_idx": 24,
+      "layer_b_idx": 25,
+      "overlap_bytes": 55856083,
+      "start_bytes": 19864223744,
+      "end_bytes": 19920079827
+    },
+    {
+      "layer_a_idx": 25,
+      "layer_b_idx": 26,
+      "overlap_bytes": 53952023,
+      "start_bytes": 20468203520,
+      "end_bytes": 20522155543
+    },
+    {
+      "layer_a_idx": 26,
+      "layer_b_idx": 27,
+      "overlap_bytes": 47824487,
+      "start_bytes": 21072183296,
+      "end_bytes": 21120007783
+    },
+    {
+      "layer_a_idx": 27,
+      "layer_b_idx": 28,
+      "overlap_bytes": 46592297,
+      "start_bytes": 21676163072,
+      "end_bytes": 21722755369
+    },
+    {
+      "layer_a_idx": 28,
+      "layer_b_idx": 29,
+      "overlap_bytes": 52510125,
+      "start_bytes": 22280142848,
+      "end_bytes": 22332652973
+    },
+    {
+      "layer_a_idx": 29,
+      "layer_b_idx": 30,
+      "overlap_bytes": 53433514,
+      "start_bytes": 22884122624,
+      "end_bytes": 22937556138
+    },
+    {
+      "layer_a_idx": 34,
+      "layer_b_idx": 35,
+      "overlap_bytes": 47979734,
+      "start_bytes": 26843545600,
+      "end_bytes": 26891525334
+    },
+    {
+      "layer_a_idx": 38,
+      "layer_b_idx": 39,
+      "overlap_bytes": 54779447,
+      "start_bytes": 91939143680,
+      "end_bytes": 91993923127
+    }
+  ],
+  "critical_region_coverage": {
+    "Protective MBR": true,
+    "GPT Header Primary": true,
+    "GPT Partition Table Entries": true,
+    "GPT First Usable Sector": true,
+    "EFI System Partition (typical 200MB)": true,
+    "APFS Container Start (typical)": false
+  },
+  "anomalies": [
+    "32-BIT OVERFLOW: 39/40 offset layers exceed INT32_MAX. Any system using signed 32-bit offsets would corrupt writes to sectors beyond 3GB.",
+    "LAYER OVERLAPS: 22 pairs overlap. Write order determines which data wins. Potential injection: a crafted late layer could overwrite any earlier sector.",
+    "CRITICAL GAP at 624MB-3648MB (3023MB): covers APFS Container Start (typical)",
+    "CRITICAL GAP at 4805MB-4864MB (58MB): covers APFS Container Start (typical)",
+    "CRITICAL GAP at 5464MB-5696MB (231MB): covers APFS Container Start (typical)",
+    "CRITICAL GAP at 6845MB-6848MB (2MB): covers APFS Container Start (typical)",
+    "CRITICAL GAP at 9754MB-9792MB (37MB): covers APFS Container Start (typical)",
+    "CRITICAL GAP at 10366MB-10368MB (1MB): covers APFS Container Start (typical)",
+    "CRITICAL GAP at 13244MB-13248MB (3MB): covers APFS Container Start (typical)",
+    "CRITICAL GAP at 13814MB-13824MB (9MB): covers APFS Container Start (typical)",
+    "CRITICAL GAP at 15581MB-16192MB (610MB): covers APFS Container Start (typical)",
+    "CRITICAL GAP at 16766MB-17216MB (449MB): covers APFS Container Start (typical)",
+    "CRITICAL GAP at 22421MB-22464MB (42MB): covers APFS Container Start (typical)",
+    "CRITICAL GAP at 23027MB-23232MB (204MB): covers APFS Container Start (typical)",
+    "CRITICAL GAP at 23830MB-24192MB (361MB): covers APFS Container Start (typical)",
+    "CRITICAL GAP at 24801MB-25024MB (222MB): covers APFS Container Start (typical)",
+    "CRITICAL GAP at 26165MB-26304MB (138MB): covers APFS Container Start (typical)",
+    "CRITICAL GAP at 26909MB-27648MB (738MB): covers APFS Container Start (typical)",
+    "CRITICAL GAP at 28249MB-87104MB (58854MB): covers APFS Container Start (typical)"
+  ],
+  "layers": [
+    {
+      "idx": 0,
+      "digest": "sha256:a1553d0a6856ba9e6999cc0ff215566584c0a4ba070332833ee238ab89aaa454",
+      "offset_bytes": 0,
+      "compressed_size": 594866177,
+      "inferred_end_bytes": 654352794,
+      "overflow_32bit": false,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "0"
+      }
+    },
+    {
+      "idx": 1,
+      "digest": "sha256:ca8512436392bc91aa5080aec115464acbd239fa4a231ce49990481eeb05a19d",
+      "offset_bytes": 3825205248,
+      "compressed_size": 589730415,
+      "inferred_end_bytes": 4473908704,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "3825205248"
+      }
+    },
+    {
+      "idx": 2,
+      "digest": "sha256:8fe0b86df61792b18aa88064ece4dc64e4b60cc39db2716e7c173048f8ed1c85",
+      "offset_bytes": 4429185024,
+      "compressed_size": 554615276,
+      "inferred_end_bytes": 5039261827,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "4429185024"
+      }
+    },
+    {
+      "idx": 3,
+      "digest": "sha256:b4877321ab4bbd003b5bc0c41212ca4d4507efc233f147fedfce6f4e3030c317",
+      "offset_bytes": 5100273664,
+      "compressed_size": 572848966,
+      "inferred_end_bytes": 5730407526,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "5100273664"
+      }
+    },
+    {
+      "idx": 4,
+      "digest": "sha256:e82cda49680acefafc2508adb63566965633751c96e1f7b4d97aed139a8801a9",
+      "offset_bytes": 5972688896,
+      "compressed_size": 562451462,
+      "inferred_end_bytes": 6591385504,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "5972688896"
+      }
+    },
+    {
+      "idx": 5,
+      "digest": "sha256:ca2f4675cc853e954eb30c2edd66e928ad8d2868175601d5ec11d00e2e609a70",
+      "offset_bytes": 6576668672,
+      "compressed_size": 547152208,
+      "inferred_end_bytes": 7178536100,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "6576668672"
+      }
+    },
+    {
+      "idx": 6,
+      "digest": "sha256:4f1f13abd6bddacf19ccd482aa7958c1b8ebef79571d44c3b83d8b9e3035c789",
+      "offset_bytes": 7180648448,
+      "compressed_size": 586170716,
+      "inferred_end_bytes": 7825436235,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "7180648448"
+      }
+    },
+    {
+      "idx": 7,
+      "digest": "sha256:596c373ade28ab925076ca1b043f9c372b1df94fbbe927575635689745770018",
+      "offset_bytes": 7784628224,
+      "compressed_size": 572057266,
+      "inferred_end_bytes": 8413891216,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "7784628224"
+      }
+    },
+    {
+      "idx": 8,
+      "digest": "sha256:c71c2b2ba3f35f07840ea2868dc3fc36ae8a05a42f012fcf240e9e4f66da69e1",
+      "offset_bytes": 8388608000,
+      "compressed_size": 582375950,
+      "inferred_end_bytes": 9029221545,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "8388608000"
+      }
+    },
+    {
+      "idx": 9,
+      "digest": "sha256:815588f9634cd7745a34207600fb1c7c10505b5a62acd6ea6e9eabf47f670963",
+      "offset_bytes": 8992587776,
+      "compressed_size": 576908159,
+      "inferred_end_bytes": 9627186750,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "8992587776"
+      }
+    },
+    {
+      "idx": 10,
+      "digest": "sha256:8809ed1c82fc82d05e4d433f649c71751e96e26ca8fdbb9fcbbf1f1c921cc1e4",
+      "offset_bytes": 9596567552,
+      "compressed_size": 574722212,
+      "inferred_end_bytes": 10228761985,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "9596567552"
+      }
+    },
+    {
+      "idx": 11,
+      "digest": "sha256:1b46a765f7ca0517eeb30e2299d73993677b595ea8b2f1b505217a5ecff24958",
+      "offset_bytes": 10267656192,
+      "compressed_size": 547926349,
+      "inferred_end_bytes": 10870375175,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "10267656192"
+      }
+    },
+    {
+      "idx": 12,
+      "digest": "sha256:38f346c537e59ec5614d98a162e8afa663d329750df102152bfa0144a1324524",
+      "offset_bytes": 10871635968,
+      "compressed_size": 596613854,
+      "inferred_end_bytes": 11527911207,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "10871635968"
+      }
+    },
+    {
+      "idx": 13,
+      "digest": "sha256:e02182ccf8ee08537741e93116718ca874467c01ce98fbf67078bccca9f934b3",
+      "offset_bytes": 11475615744,
+      "compressed_size": 551984713,
+      "inferred_end_bytes": 12082798928,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "11475615744"
+      }
+    },
+    {
+      "idx": 14,
+      "digest": "sha256:a41e8a318fba09d6f095390fb609ffe30ffd61c59e718902fd52e5cf8a2c89aa",
+      "offset_bytes": 12079595520,
+      "compressed_size": 559687969,
+      "inferred_end_bytes": 12695252285,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "12079595520"
+      }
+    },
+    {
+      "idx": 15,
+      "digest": "sha256:7cdd192b183cf023abac6d79f2d8805e78144c7a317b15e48691d8cd2cadfc34",
+      "offset_bytes": 12683575296,
+      "compressed_size": 561292726,
+      "inferred_end_bytes": 13300997294,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "12683575296"
+      }
+    },
+    {
+      "idx": 16,
+      "digest": "sha256:5661b18b2fab63f53b448bd966fdb6ac20c978f97fb5aff634fbae6d5689c0ab",
+      "offset_bytes": 13287555072,
+      "compressed_size": 545776812,
+      "inferred_end_bytes": 13887909565,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "13287555072"
+      }
+    },
+    {
+      "idx": 17,
+      "digest": "sha256:f21ad408c305280c2fab1ec0a484533b943ff44088c917770dc298a900f49e8c",
+      "offset_bytes": 13891534848,
+      "compressed_size": 540151019,
+      "inferred_end_bytes": 14485700968,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "13891534848"
+      }
+    },
+    {
+      "idx": 18,
+      "digest": "sha256:43d80771f4c55aa764af93562bdf01a821a954a6a7e0d544481ae98483f9b90c",
+      "offset_bytes": 14495514624,
+      "compressed_size": 572846591,
+      "inferred_end_bytes": 15125645874,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "14495514624"
+      }
+    },
+    {
+      "idx": 19,
+      "digest": "sha256:413ad21211af1a287ba4c34f2401f4085ae1f37ae5c66ee2839edf38c0e21505",
+      "offset_bytes": 15099494400,
+      "compressed_size": 597321601,
+      "inferred_end_bytes": 15756548161,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "15099494400"
+      }
+    },
+    {
+      "idx": 20,
+      "digest": "sha256:497f9e615bef9abdef45cd8162e4c8c043fa14940a4a1372b059e6507f1f0642",
+      "offset_bytes": 15703474176,
+      "compressed_size": 577296007,
+      "inferred_end_bytes": 16338499783,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "15703474176"
+      }
+    },
+    {
+      "idx": 21,
+      "digest": "sha256:9ef7192b7f4e4b92fc295a7b599ae606b0de8599e44c06a80a3ca88855c31a1d",
+      "offset_bytes": 16978542592,
+      "compressed_size": 547939850,
+      "inferred_end_bytes": 17581276427,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "16978542592"
+      }
+    },
+    {
+      "idx": 22,
+      "digest": "sha256:f76ce7469c2d818bd46712c8aa665e99f3ab5ddaa71d5581d46c85365be0f382",
+      "offset_bytes": 18052284416,
+      "compressed_size": 585542888,
+      "inferred_end_bytes": 18696381592,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "18052284416"
+      }
+    },
+    {
+      "idx": 23,
+      "digest": "sha256:034e61e8ee0c535f45a61c93b5c2f606c22ef15a87c67b9cb2477608123b4d5f",
+      "offset_bytes": 18656264192,
+      "compressed_size": 600013609,
+      "inferred_end_bytes": 19316279161,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "18656264192"
+      }
+    },
+    {
+      "idx": 24,
+      "digest": "sha256:9a6c92b9ff75123d228d14051ed4c08ece5eb92a3e326c1831fa6c20bdc87041",
+      "offset_bytes": 19260243968,
+      "compressed_size": 599850781,
+      "inferred_end_bytes": 19920079827,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "19260243968"
+      }
+    },
+    {
+      "idx": 25,
+      "digest": "sha256:45e5a675b7104e0e85c950f4d59839dbf6fa790026c5f4bfc0f74edaf1686739",
+      "offset_bytes": 19864223744,
+      "compressed_size": 598119818,
+      "inferred_end_bytes": 20522155543,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "19864223744"
+      }
+    },
+    {
+      "idx": 26,
+      "digest": "sha256:62ddecd698ff665f09ec6fdbc71decde35f795ac8d6896e156f9af6bc4e9d823",
+      "offset_bytes": 20468203520,
+      "compressed_size": 592549330,
+      "inferred_end_bytes": 21120007783,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "20468203520"
+      }
+    },
+    {
+      "idx": 27,
+      "digest": "sha256:f50fec251f5742d3c0222baaed2a72b5f374b80e26dd6de06ea1e0419712c795",
+      "offset_bytes": 21072183296,
+      "compressed_size": 591429158,
+      "inferred_end_bytes": 21722755369,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "21072183296"
+      }
+    },
+    {
+      "idx": 28,
+      "digest": "sha256:64da59aa6c82bedf46e9dbb2d715265b3f5d54dcb23242a857f68ec21f4a42a5",
+      "offset_bytes": 21676163072,
+      "compressed_size": 596809001,
+      "inferred_end_bytes": 22332652973,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "21676163072"
+      }
+    },
+    {
+      "idx": 29,
+      "digest": "sha256:f772417037462db55a86215f01e4106d9ad690c31170cb8dcbc675142ea3acf6",
+      "offset_bytes": 22280142848,
+      "compressed_size": 597648446,
+      "inferred_end_bytes": 22937556138,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "22280142848"
+      }
+    },
+    {
+      "idx": 30,
+      "digest": "sha256:6131b7567d420c288ea2b7389bb8c691c7826b8bff9fabcd391f90d5b18b55b6",
+      "offset_bytes": 22884122624,
+      "compressed_size": 569500837,
+      "inferred_end_bytes": 23510573544,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "22884122624"
+      }
+    },
+    {
+      "idx": 31,
+      "digest": "sha256:63bbbd15fe8d65fa05219ac470bea82bf4b62218ffb104fa29237bb602b2c479",
+      "offset_bytes": 23555211264,
+      "compressed_size": 537589558,
+      "inferred_end_bytes": 24146559777,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "23555211264"
+      }
+    },
+    {
+      "idx": 32,
+      "digest": "sha256:45793137820d7a50d6b96f626b62070267eb7e57f715319cb446f47671909d3f",
+      "offset_bytes": 24360517632,
+      "compressed_size": 570299985,
+      "inferred_end_bytes": 24987847615,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "24360517632"
+      }
+    },
+    {
+      "idx": 33,
+      "digest": "sha256:0d271ac39ff769d4533a795e7f883676329f4b5256bf9874852a84969e30d587",
+      "offset_bytes": 25367150592,
+      "compressed_size": 581072399,
+      "inferred_end_bytes": 26006330230,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "25367150592"
+      }
+    },
+    {
+      "idx": 34,
+      "digest": "sha256:364e4aa6d17ca128cc79f19d394f1ce4eba843065c2e331a658807f076dce8e8",
+      "offset_bytes": 26239565824,
+      "compressed_size": 592690464,
+      "inferred_end_bytes": 26891525334,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "26239565824"
+      }
+    },
+    {
+      "idx": 35,
+      "digest": "sha256:32807bb97df1fc15b033752904bb91924bef9070c60ea7b8813f98317866ae1d",
+      "offset_bytes": 26843545600,
+      "compressed_size": 539222745,
+      "inferred_end_bytes": 27436690619,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "26843545600"
+      }
+    },
+    {
+      "idx": 36,
+      "digest": "sha256:e7d7f61184a8b811a77ec1eca581792c8b950640cf33c04a62cdea19a6c640ca",
+      "offset_bytes": 27581743104,
+      "compressed_size": 577291859,
+      "inferred_end_bytes": 28216764148,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "27581743104"
+      }
+    },
+    {
+      "idx": 37,
+      "digest": "sha256:7248b6272d2f9bbd517ef5beb42130db42c812e4d794385d4171cac29b2d28e2",
+      "offset_bytes": 28991029248,
+      "compressed_size": 573754823,
+      "inferred_end_bytes": 29622159553,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "28991029248"
+      }
+    },
+    {
+      "idx": 38,
+      "digest": "sha256:242b124089e33a82746556feaf85f034337ac69b7080b257fbc15953a53f5074",
+      "offset_bytes": 91335163904,
+      "compressed_size": 598872021,
+      "inferred_end_bytes": 91993923127,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "91335163904"
+      }
+    },
+    {
+      "idx": 39,
+      "digest": "sha256:cfb82c1ea72724448f3c6dd5191f20771b69b6fa581d01a5d5cb9735eace1795",
+      "offset_bytes": 91939143680,
+      "compressed_size": 383391675,
+      "inferred_end_bytes": 92360874522,
+      "overflow_32bit": true,
+      "annotations": {
+        "com.macstadium.orka-engine.disk.layer.offset": "91939143680"
+      }
+    },
+    {
+      "idx": 40,
+      "digest": "sha256:6ba2f0b59bb3923152478b7723e4e1f710890c2e6c77f33f810f9d8fbab2fb60",
+      "offset_bytes": null,
+      "compressed_size": 33579164,
+      "inferred_end_bytes": null,
+      "overflow_32bit": false,
+      "annotations": {}
+    },
+    {
+      "idx": 41,
+      "digest": "sha256:a0a9878f52238f08eebc26ec427bd0e5a2e1eb22a3b50b56f636b908e6327976",
+      "offset_bytes": null,
+      "compressed_size": 299,
+      "inferred_end_bytes": null,
+      "overflow_32bit": false,
+      "annotations": {}
+    }
+  ]
+}

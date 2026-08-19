@@ -1,0 +1,336 @@
+// orka-engine gRPC API - reconstructed from binary RE
+// Source: com.macstadium.orka-engine.server (arm64, v3.5.2)
+// Sockets: /var/run/orka-engine.sock (engine), per-VM run.sock (runvz)
+// Method: ServerInterceptor<X,Y> type extraction + gRPC path strings + Swift mangled symbols
+// Status: 20 RPCs confirmed (F108). Return types from ServerInterceptor<Request, Response> pairs.
+//         Field names from proto string table @ 0x8fde00–0x8fe0a4.
+//         Field numbers inferred from wire order (best-effort).
+//
+// Services confirmed:
+//   VirtualMachineService        (12 RPCs) — /var/run/orka-engine.sock
+//   ImageService                 ( 6 RPCs) — /var/run/orka-engine.sock
+//   SystemService                ( 1 RPC ) — /var/run/orka-engine.sock (Empty→Empty)
+//   VirtualMachineRegistrationService (1 RPC) — VM→engine callback on boot
+//   RunVZService                 ( 5 RPCs) — per-VM run.sock (engine→runvz)
+
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package orka.engine;
+
+option go_package = "github.com/macstadium/orka-engine/api";
+
+// ─── VirtualMachineService ─────────────────────────────────────────────────
+// Served on /var/run/orka-engine.sock
+// Swift gRPC path: /VirtualMachineService/<Method>
+
+// Return types confirmed from ServerInterceptor<Request, Response> pairs in binary (F108).
+// Only VMStart, VMInstall, VMList return custom responses; all others return Empty.
+service VirtualMachineService {
+  rpc List        (VirtualMachineListRequest)        returns (VirtualMachineListResponse);
+  rpc Create      (VirtualMachineCreateRequest)      returns (google.protobuf.Empty);
+  rpc Start       (VirtualMachineStartRequest)       returns (VirtualMachineStartResponse);
+  rpc Stop        (VirtualMachineStopRequest)        returns (google.protobuf.Empty);
+  rpc Restart     (VirtualMachineRestartRequest)     returns (google.protobuf.Empty);
+  rpc Delete      (VirtualMachineDeleteRequest)      returns (google.protobuf.Empty);
+  rpc Clone       (VirtualMachineCloneRequest)       returns (google.protobuf.Empty);
+  rpc Edit        (VirtualMachineEditRequest)        returns (google.protobuf.Empty);
+  rpc Save        (VirtualMachineSaveRequest)        returns (google.protobuf.Empty);
+  rpc Console     (VirtualMachineConsoleRequest)     returns (google.protobuf.Empty);
+  rpc Install     (VirtualMachineInstallRequest)     returns (VirtualMachineInstallResponse);
+  rpc Repartition (VirtualMachineRepartitionRequest) returns (google.protobuf.Empty);
+}
+
+// VM list
+message VirtualMachineListRequest {}
+
+message VirtualMachineListResponse {
+  repeated VirtualMachineListItem vms = 1;
+}
+
+message VirtualMachineListItem {
+  string vm_name           = 1;
+  string image_name        = 2;
+  string mac_address       = 3;
+  uint32 vnc_port          = 4;
+  bool   graphical_console = 5;
+  uint32 pid               = 6;
+  uint32 display_width     = 7;
+  uint32 display_height    = 8;
+  uint32 display_dpi       = 9;
+  string status            = 10;
+}
+
+// VM create — returns Empty (confirmed F108)
+message VirtualMachineCreateRequest {
+  string vm_name           = 1;
+  string source_name       = 2;
+  uint32 vnc_port          = 3;
+  bool   graphical_console = 4;
+  bool   dynamic_resolution = 5;
+  bool   recovery          = 6;
+  repeated string mounts   = 7;
+  string net_interface     = 8;
+  repeated string attached_disks = 9;
+  bool   reuse_machine_id  = 10;
+  uint64 disk_size_gb      = 11;
+  bool   enable_full_ui    = 12;
+}
+
+// VM start — returns custom response (confirmed F108)
+message VirtualMachineStartRequest {
+  string vm_name = 1;
+}
+
+message VirtualMachineStartResponse {
+  string vm_name = 1;
+  string notice  = 2;
+}
+
+// VM stop — returns Empty (confirmed F108)
+message VirtualMachineStopRequest {
+  string vm_name = 1;
+  bool   force   = 2;
+}
+
+// VM restart — returns Empty (confirmed F108)
+message VirtualMachineRestartRequest {
+  string vm_name = 1;
+}
+
+// VM delete — returns Empty (confirmed F108)
+message VirtualMachineDeleteRequest {
+  string vm_name = 1;
+  bool   force   = 2;
+}
+
+// VM clone — returns Empty (confirmed F108)
+message VirtualMachineCloneRequest {
+  string source_name      = 1;
+  string destination_name = 2;
+}
+
+// VM edit — returns Empty (confirmed F108); live config mutation without restart
+message VirtualMachineEditRequest {
+  string vm_name            = 1;
+  uint32 vnc_port           = 2;
+  bool   graphical_console  = 3;
+  bool   dynamic_resolution = 4;
+  repeated string mounts    = 5;
+  string net_interface      = 6;
+  repeated string attached_disks = 7;
+}
+
+// VM save (snapshot to new image) — returns Empty (confirmed F108)
+message VirtualMachineSaveRequest {
+  string vm_name    = 1;
+  string image_name = 2;
+}
+
+// VM console (virtio serial / VNC access) — returns Empty (confirmed F108, F107)
+// Any process with socket access can attach via this RPC — no additional auth.
+message VirtualMachineConsoleRequest {
+  string vm_name = 1;
+}
+
+// VM install (IPSW-based macOS install via VZMacOSRestoreImage) — returns custom response
+message VirtualMachineInstallRequest {
+  string vm_name      = 1;
+  string ipsw         = 2;
+  uint64 disk_size_gb = 3;
+}
+
+message VirtualMachineInstallResponse {
+  string vm_name = 1;
+  string notice  = 2;
+}
+
+// VM repartition (destructive disk resize — F98) — returns Empty (confirmed F108)
+// Log string: " disk repartitioned" confirms success path.
+message VirtualMachineRepartitionRequest {
+  string vm_name      = 1;
+  uint64 disk_size_gb = 2;
+}
+
+
+// ─── ImageService ───────────────────────────────────────────────────────────
+// Served on /var/run/orka-engine.sock
+// Swift gRPC path: /ImageService/<Method>
+
+// ImageList and DownloadLatestIPSW take google.protobuf.Empty (confirmed F108).
+// ImageList with zero-byte body = enumeration with no schema knowledge required.
+service ImageService {
+  rpc List               (google.protobuf.Empty) returns (ImageListResponse);
+  rpc Pull               (ImagePullRequest)      returns (stream ImagePullResponse);
+  rpc Push               (ImagePushRequest)      returns (stream ImagePushResponse);
+  rpc Copy               (ImageCopyRequest)      returns (google.protobuf.Empty);
+  rpc Delete             (ImageDeleteRequest)    returns (google.protobuf.Empty);
+  rpc DownloadLatestIPSW (google.protobuf.Empty) returns (stream ImageDownloadLatestIPSWResponse);
+}
+
+message ImageListResponse {
+  repeated ImageListItem images = 1;
+}
+
+message ImageListItem {
+  string image_name  = 1;
+  string image_id    = 2;
+  string tag         = 3;
+  uint64 size        = 4;
+  uint64 space_used  = 5;
+}
+
+// Image pull (registry → local)
+message ImagePullRequest {
+  string image_name  = 1;
+  string local_name  = 2;   // local alias after pull
+  string password    = 3;
+  string auth_config = 4;   // JSON auth blob
+  bool   insecure    = 5;
+  bool   clean_cache = 6;
+}
+
+message ImagePullResponse {
+  int64 current = 1;  // bytes transferred
+  int64 total   = 2;  // total bytes
+}
+
+// Image push (local → registry)
+message ImagePushRequest {
+  string image_name  = 1;
+  string remote_name = 2;
+  string password    = 3;
+  string auth_config = 4;
+  bool   insecure    = 5;
+  bool   archive     = 6;   // push as tar archive
+}
+
+message ImagePushResponse {
+  int64 current = 1;
+  int64 total   = 2;
+}
+
+// Image copy (local → local) — returns Empty (confirmed F108)
+message ImageCopyRequest {
+  string source_image      = 1;
+  string destination_image = 2;
+}
+
+// Image delete — returns Empty (confirmed F108)
+message ImageDeleteRequest {
+  string image_name = 1;
+  bool   force      = 2;
+}
+
+// DownloadLatestIPSW: streaming response, takes Empty (confirmed F108)
+// Engine pulls latest macOS firmware from Apple CDN (F97).
+message ImageDownloadLatestIPSWResponse {
+  int64  current  = 1;
+  int64  total    = 2;
+  string filename = 3;
+}
+
+
+// ─── SystemService ──────────────────────────────────────────────────────────
+// Served on /var/run/orka-engine.sock
+// Source: SystemProvider.swift (F115)
+// Confirmed: exactly 1 RPC with ServerInterceptor<Google_Protobuf_Empty, Google_Protobuf_Empty>
+// Method name CONFIRMED "Ping" — handle dispatch at va 0x1005bfe84:
+//   mov w0, #0x6950 / movk w0, #0x676e, lsl #16 → bytes 50 69 6e 67 = "Ping"
+//   Swift small string inline; tag x1=#-0x1c00000000000000 (len=4)
+//   serviceName CONFIRMED "SystemService" — serviceName getter witness at va 0x1005c1a78
+//   tag 0xed encodes len=13; Swift small string across x1/x2 = "SystemSe"+"rvice"
+// gRPC path: /SystemService/Ping
+
+service SystemService {
+  rpc Ping (google.protobuf.Empty) returns (google.protobuf.Empty);
+}
+
+
+// ─── VirtualMachineRegistrationService ─────────────────────────────────────
+// Served on /var/run/orka-engine.sock
+// Source: VirtualMachineRegistrationProvider.swift (F108)
+// VMs call Register() on boot to announce themselves to the engine.
+// Log string: "received callback from VM <name>"
+// Engine holds a VirtualMachineRegistrationManager with RegistrationItem per VM.
+// Confirmed: 1 RPC — ServerInterceptor<VirtualMachineRegisterRequest, Google_Protobuf_Empty>
+// Unregister/List are speculative — only Register is confirmed from ServerInterceptor table.
+
+service VirtualMachineRegistrationService {
+  rpc Register   (VirtualMachineRegisterRequest) returns (google.protobuf.Empty);
+  // Unregister and List below are SPECULATIVE — not confirmed by ServerInterceptor table
+  // rpc Unregister (VirtualMachineRegisterRequest) returns (google.protobuf.Empty);
+}
+
+message VirtualMachineRegisterRequest {
+  string vm_name     = 1;
+  string source_name = 2;
+}
+
+
+// ─── RunVZService ───────────────────────────────────────────────────────────
+// Served on run.sock (per-VM Unix domain socket)
+// Backed by com.macstadium.orka-engine.runvz (Apple Virtualization.framework)
+// gRPC paths confirmed in binary: /RunVZService/<Method>
+// /Client/RunVZService also observed (client-side channel path)
+
+service RunVZService {
+  rpc Console     (RunVZConsoleRequest)     returns (RunVZConsoleResponse);
+  rpc Info        (RunVZInfoRequest)        returns (RunVZInfoResponse);
+  rpc Repartition (RunVZRepartitionRequest) returns (RunVZRepartitionResponse);
+  rpc Restart     (RunVZRestartRequest)     returns (RunVZRestartResponse);
+  rpc Stop        (RunVZStopRequest)        returns (RunVZStopResponse);
+}
+
+// RunVZHelper.Options fields extracted from binary (Swift struct field names)
+// used when launching runvz subprocess
+message RunVZOptions {
+  repeated string attached_disks       = 1;
+  bool            enable_full_ui       = 2;
+  string          net_interface        = 3;
+  bool            disable_graphical_console = 4;
+  bool            enable_dynamic_resolution = 5;
+  repeated string mount                = 6;
+  uint32          vnc_port             = 7;
+  bool            recovery             = 8;
+}
+
+message RunVZConsoleRequest {
+  string vm_name = 1;
+}
+
+message RunVZConsoleResponse {
+  uint32 vnc_port = 1;
+  string address  = 2;
+}
+
+message RunVZInfoRequest {}
+
+message RunVZInfoResponse {
+  string vm_name       = 1;
+  uint32 pid           = 2;
+  string mac_address   = 3;
+  uint32 display_width = 4;
+  uint32 display_height = 5;
+  uint32 display_dpi   = 6;
+  string status        = 7;
+}
+
+message RunVZRepartitionRequest {
+  uint64 disk_size_gb = 1;
+}
+
+message RunVZRepartitionResponse {
+  string notice = 1;
+}
+
+message RunVZRestartRequest {}
+
+message RunVZRestartResponse {}
+
+message RunVZStopRequest {
+  bool force = 1;
+}
+
+message RunVZStopResponse {}

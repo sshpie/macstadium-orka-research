@@ -1,0 +1,74 @@
+# strings output: orka-vm-tools (from orka-vm-tools.pkg)
+# SHA-256: b793c93415cb7ae3afa89eafb4d24c7690e41a332a40b62372baffa2b627b6ee
+# Source: orka-vm-tools.pkg (publicly downloadable, no auth)
+# Analysis date: 2026-08-17
+
+--- SECTION: Clipboard library Go module dependency (embedded build info) ---
+	clipboard
+dep	github.com/atotto/clipboard	v0.1.4	h1:EH0zSVneZPSuFR11BlR9YppQTVDbh5+16AmcJi4g1z4=
+_github.com/atotto/clipboard.copyCmdArgs
+github.com/atotto/clipboard.getCopyCommand
+github.com/atotto/clipboard.getPasteCommand
+_github.com/atotto/clipboard.pasteCmdArgs
+_github.com/atotto/clipboard.readAll
+github.com/atotto/clipboard.readAll
+github.com/atotto/clipboard.ReadAll
+_github.com/atotto/clipboard.writeAll
+github.com/atotto/clipboard.writeAll
+github.com/atotto/clipboard.WriteAll
+_macstadium/orka-vm-tools/vm.clipboardManager
+macstadium/orka-vm-tools/vm.clipboardManager
+_macstadium/orka-vm-tools/vm.clipboardManager.func1
+macstadium/orka-vm-tools/vm.clipboardManager.func1
+_macstadium/orka-vm-tools/vm.clipboardSingleton
+_macstadium/orka-vm-tools/vm.(*Tools).clipboard
+macstadium/orka-vm-tools/vm.(*Tools).clipboard
+ORKA_MODEParseBoolimage/bmpimage/gifimage/pngvideo/avifont/woffParseUint[%v = %d]data_flowauthoritynet/http.HTTP/1.1 HTTP/1.0 <a href="video/mp4See OtherUse ProxyForbiddenNot FoundToo Earlyfork/execcontinued244140625interruptbus errorsuspendedWednesdaySeptemberlocaltimeclipboard/metadatabad indirreflect:  method: (MISSING)%!(EXTRA timerSendpollCacheprofBlockstackpoolhchanLeafwbufSpansGC (idle)mSpanDeadinittracescavtracepanicwaitchan sendpreemptedcoroutinecopystackinterface -> node= ms cpu,  (forced) wbuf1.n= wbuf2.n= s.limit= s.state= B work ( B exp.)  marked   unmarked in use)
+/Users/devadmin/actions-runner/_work/monorepo-dev/monorepo-dev/packages/orka-vm-tools/vm/tools.clipboard.go
+/Users/devadmin/go/pkg/mod/github.com/atotto/clipboard@v0.1.4/clipboard_darwin.go
+/Users/devadmin/go/pkg/mod/github.com/atotto/clipboard@v0.1.4/clipboard.go
+*vm.clipboardManagerState
+
+--- SECTION: /dev/tty.virtio + clipboard_contents (virtio serial clipboard injection) ---
+alloc_objectsinuse_objects.WithDeadline(Content-LengthMAX_FRAME_SIZEPROTOCOL_ERRORINTERNAL_ERRORREFUSED_STREAMaccept-charsetcontent-lengthfirst_settingsping_on_streamtrailers_bogus{$} not at endempty wildcardinvalid methodinternal errorparsing %q: %wNot Acceptable (core dumped)invalid syntax1907348632812595367431640625is a directorytext file busyfile too largetoo many linkstoo many usersprotocol errortrace/BPT trapasynctimerchantime.Location(: extra text: mount_virtiofsvm_repartition on zero Valueunknown methodunexpected EOFuserArenaStateGC (dedicated)read mem statsgcstoptheworldprofstackdepthtraceallocfreeGC assist waitfinalizer waitsync.Cond.WaitSIGABRT: aborts.allocCount= key size wrongruntime: mmap(nil elem type! to finalizer GC worker initruntime: full=runtime: want=MB; allocated bad restart PC, called from
+169.254.169.254255.255.255.255HalfClosedLocalapplication/pdfapplication/oggfont/collectionapplication/zipnegative updateaccept-encodingaccept-languagex-forwarded-fortrailers_pseudobad_path_methodAccept-EncodingPartial ContentRequest TimeoutLength RequiredNot ImplementedGateway Timeoutunexpected typebad trailer key476837158203125no such processnot a directorynetwork is downbad system call: cannot parse ,M3.2.0,M11.1.0-productVersion/dev/tty.virtioreflectlite.SetallocmRInternalGC (fractional)write heap dumpasyncpreemptoffforce gc (idle)sync.Mutex.Lockruntime.Goschedmalloc deadlockruntime error: elem size wrong  with GC prog
+context canceledHalfClosedRemoteProxy-Connectionapplication/wasmSETTINGS_TIMEOUTFRAME_SIZE_ERRORContent-Encodingcontent-encodingcontent-languagecontent-locationwww-authenticatenil *http.Serverinvalid settingssetting_win_sizestream_went_downover_max_streamsat offset %d: %wunexpected type unknown locationAlready ReportedMultiple ChoicesPayment RequiredUpgrade Required23841857910156250123456789abcdef0123456789ABCDEFinvalid argumentresult too largemessage too longno route to hostpolicy not foundtime: bad [0-9]*/dev/tty.virtio1string too large: value of type integer overflowgcshrinkstackofftracefpunwindoffGC scavenge waitGC worker (idle)page trace flushSIGNONE: no trap out of bounds [/gc/gogc:percent, not a functiongc: unswept span KiB work (bg),  mheap.sweepgen=runtime: nelems=workbuf is emptymSpanList.removemSpanList.insertbad special kindbad summary dataruntime: addr = runtime: base = runtime: head = 
+truncated profilemalformed profile169.254.169.254:80context.Backgroundapplication/x-gzipFLOW_CONTROL_ERROR404 page not foundframe_goaway_shortproxy-authenticateUNKNOWN_SETTING_%dreflect.Value.Uintconnection is idleunexpected type %Ttrailers_not_endedconnection refusedTemporary RedirectPermanent RedirectMethod Not AllowedExpectation Failedbad Content-Lengthvalue out of range298023223876953125input/output errorno child processesfile name too longtoo many processesno locks availableneed authenticatoroperation canceledidentifier removedENOLINK (Reserved)segmentation faultsuspended (signal): day out of rangeTime.MarshalJSON: Time.MarshalText: unknown time zone clipboard_contentsMessage Received: adaptivestackstartdontfreezetheworldtraceadvanceperiodtracebackancestorsgarbage collectionsync.RWMutex.RLockGC worker (active)stopping the worldwait until GC endsbad lfnode addresssystem page size (elem align too big  but memory size /gc/pauses:seconds because dotdotdotruntime: npages = invalid skip valueruntime: range = {runtime: released=pthread_mutex_initindex out of rangeruntime:   gp: gp=runtime: getg:  g=forEachP: not done in async preempt
+tls: internal error: unsupported key (%T)invalid value length: expected %d, got %dnet/url: invalid control character in URLreflect.Value.Addr of unaddressable valueMapIter.Next called on exhausted iteratorbytes.Buffer.WriteTo: invalid Write countbytes.Reader.WriteTo: invalid Write countidna: internal error in punycode encodingx509: cannot parse URI %q: invalid domaincrypto/md5: invalid hash state identifiercolon must be followed by more charactersA sampling of all past memory allocationsseconds and debug params are incompatibleasn1: internal error in parseTagAndLengthGODEBUG sys/cpu: no value specified for "mix of request and response pseudo headersPRIORITY frame payload size was %d; want 5Failed to parse goroutine ID out of %q: %vhttp2: server connection error from %v: %vbad wildcard segment (must start with '{')http: multipart handled by MultipartReader173472347597680709441192448139190673828125867361737988403547205962240695953369140625Time.MarshalBinary: unexpected zone offsetExecuted mount cmd: 'mount_virtiofs %s %s'sync/atomic: store of nil value into Valuepersistentalloc: align is not a power of 2out of memory allocating checkmarks bitmap/cpu/classes/gc/mark/dedicated:cpu-seconds/memory/classes/metadata/mcache/free:bytes/memory/classes/metadata/mspan/inuse:bytesnon-empty mark queue after concurrent marksweep: tried to preserve a user arena spanruntime: blocked write on closing polldescunexpected state passed to panicrangestateacquireSudog: found s.elem != nil in cachefatal error: cgo callback before cgo call
+
+--- SECTION: 169.254.169.254 IMDS address ---
+truncated profilemalformed profile169.254.169.254:80context.Backgroundapplication/x-gzipFLOW_CONTROL_ERROR404 page not foundframe_goaway_shortproxy-authenticateUNKNOWN_SETTING_%dreflect.Value.Uintconnection is idleunexpected type %Ttrailers_not_endedconnection refusedTemporary RedirectPermanent RedirectMethod Not AllowedExpectation Failedbad Content-Lengthvalue out of range298023223876953125input/output errorno child processesfile name too longtoo many processesno locks availableneed authenticatoroperation canceledidentifier removedENOLINK (Reserved)segmentation faultsuspended (signal): day out of rangeTime.MarshalJSON: Time.MarshalText: unknown time zone clipboard_contentsMessage Received: adaptivestackstartdontfreezetheworldtraceadvanceperiodtracebackancestorsgarbage collectionsync.RWMutex.RLockGC worker (active)stopping the worldwait until GC endsbad lfnode addresssystem page size (elem align too big  but memory size /gc/pauses:seconds because dotdotdotruntime: npages = invalid skip valueruntime: range = {runtime: released=pthread_mutex_initindex out of rangeruntime:   gp: gp=runtime: getg:  g=forEachP: not done in async preempt
+
+--- SECTION: AppleParavirtDisplay + com.macstadium.resolution.set ---
+AppleParavirtDisplayinvalid write resultfloating point errorGC sweep terminationResetDebugLog (test)chan send (nil chan)flushing proc cachesSIGALRM: alarm clockSIGTERM: terminationmalloc during signalclose of nil channelinconsistent lockedmnotetsleep not on g0bad system page size to unallocated span/gc/scan/stack:bytes/gc/scan/total:bytes/gc/heap/frees:bytes/gc/gomemlimit:bytesp mcache not flushed markroot jobs done
+com.macstadium.resolution.setno AppleParavirtDisplay foundSIGPIPE: write to broken pipeexecuting on Go runtime stacknotesleep - waitm out of syncneed padding in bucket (elem)/cpu/classes/idle:cpu-seconds/cpu/classes/user:cpu-seconds/gc/heap/allocs-by-size:bytes/gc/stack/starting-size:bytesgc done but gcphase != _GCoffruntime: p.gcMarkWorkerMode= scanobject of a noscan objectruntime: marking free object addspecial on invalid pointerruntime: summary max pages = runtime: levelShift[level] = doRecordGoroutineProfile gp1=tried to unpin non-Go pointerruntime: sudog with non-nil cgfput: bad status (not Gdead)LockOSThread nesting overflowsemacquire not on the G stackruntime: split stack overflowstring concatenation too longinvalid function symbol tabletrace: reading after shutdownruntime: traceback stuck. pc=tried to trace dead goroutineruntime: impossible type kindunknown certificate authoritytls: too many ignored recordstls: invalid NextProtos valuetls: invalid server key sharereflect: Key of non-map type  cannot be converted to type mismatched local address typeunknown IP protocol specifiedmime: invalid media parameterbufio.Scanner: token too longexec: Wait was already calledchi/middleware context value x509: unsupported time formatx509: cannot parse URI %q: %sx509: malformed serial numberx509: cannot parse dnsName %qcrypto/aes: invalid key size crypto/des: invalid key size crypto/rc4: invalid key size mlkem768: invalid seed lengthinvalid P256 element encodinginteger not minimally-encodedzero length OBJECT IDENTIFIER20060102150405.999999999Z0700pkcs12: odd-length BMP stringkSecTrustSettingsPolicyStringSecTrustGetCertificateAtIndexpoly1305: unexpected overflowinvalid character class rangeError getting display info: %vstream error: stream ID %d; %vframe_settings_ack_with_lengthillegal window increment valueHEADERS frame with stream ID 0frame_continuation_zero_streamhttp2: decoded hpack field %+vrunning on the wrong goroutineaccess-control-request-headershttp2: panic serving %v: %v
+
+--- SECTION: Source path (developer machine) ---
+</html>base 128 integer too largetruncated base 128 integerasn1: invalid UTF-8 stringnon sequence tagged as setchacha20: wrong nonce sizechacha20: counter overflowstring_table[0] must be ''pprof: use of zero Profilehttpservecontentkeepheadersinvalid dependent stream IDDATA frame with stream ID 0frame_rststream_zero_streamframe_pushpromise_pad_shortaccess-control-allow-originhttp2: server read frame %vignoring invalid trailer %qinvalid WriteHeader code %vadd DATA on non-open streamos: unsupported signal typeos: process not initialized363797880709171295166015625socket is already connected/Applications/orka-vm-toolsproperty %s is not a numberfailed to get display modesUnable to parse request URLreflectlite.Value.Interfacereflectlite.Value.NumMethod is not assignable to type PageCachePagesLeaked (test)SIGILL: illegal instructionSIGXCPU: cpu limit exceededcgoUse should not be calledmakechan: size out of rangeG waiting list is corruptedruntime
+macstadium/orka-vm-tools/utils
+macstadium/orka-vm-tools/utils.Exec
+macstadium/orka-vm-tools/utils.GetEnv
+macstadium/orka-vm-tools/utils.GetOSVersion
+macstadium/orka-vm-tools/utils.GetOSVersion.Printf.func1
+macstadium/orka-vm-tools/utils.ProcessEnv
+macstadium/orka-vm-tools/utils.ProcessEnv.Println.func1
+macstadium/orka-vm-tools/vm
+macstadium/orka-vm-tools/vm._Cfunc_CFArrayGetCount
+macstadium/orka-vm-tools/vm._Cfunc_CFArrayGetValueAtIndex
+macstadium/orka-vm-tools/vm._Cfunc_CFGetTypeID
+macstadium/orka-vm-tools/vm._Cfunc_CFNumberGetTypeID
+macstadium/orka-vm-tools/vm._Cfunc_CFNumberGetValue
+macstadium/orka-vm-tools/vm._Cfunc_CFRelease
+macstadium/orka-vm-tools/vm._Cfunc_CFStringCreateWithCString
+macstadium/orka-vm-tools/vm._Cfunc_CGDisplayCopyAllDisplayModes
+macstadium/orka-vm-tools/vm._Cfunc_CGDisplayModeGetHeight
+macstadium/orka-vm-tools/vm._Cfunc_CGDisplayModeGetWidth
+macstadium/orka-vm-tools/vm._Cfunc_CGDisplaySetDisplayMode
+
+--- SECTION: repartition function symbols ---
+alloc_objectsinuse_objects.WithDeadline(Content-LengthMAX_FRAME_SIZEPROTOCOL_ERRORINTERNAL_ERRORREFUSED_STREAMaccept-charsetcontent-lengthfirst_settingsping_on_streamtrailers_bogus{$} not at endempty wildcardinvalid methodinternal errorparsing %q: %wNot Acceptable (core dumped)invalid syntax1907348632812595367431640625is a directorytext file busyfile too largetoo many linkstoo many usersprotocol errortrace/BPT trapasynctimerchantime.Location(: extra text: mount_virtiofsvm_repartition on zero Valueunknown methodunexpected EOFuserArenaStateGC (dedicated)read mem statsgcstoptheworldprofstackdepthtraceallocfreeGC assist waitfinalizer waitsync.Cond.WaitSIGABRT: aborts.allocCount= key size wrongruntime: mmap(nil elem type! to finalizer GC worker initruntime: full=runtime: want=MB; allocated bad restart PC, called from
+_macstadium/orka-vm-tools/vm.(*Tools).repartition
+macstadium/orka-vm-tools/vm.(*Tools).repartition
+repartition
+trying to put back buffer of the wrong size in the copyBufPoolfound bad pointer in Go heap (incorrect use of unsafe or cgo?)limiterEvent.stop: found wrong event in p's limiter event slotslice length too short to convert to array or pointer to arrayruntime: internal error: misuse of lockOSThread/unlockOSThreadtls: server did not send a quic_transport_parameters extensionreflect: reflect.Value.Pointer on an invalid notinheap pointerchi: attempting to Mount() a handler on an existing path, '%s'x509: certificate is not authorized to sign other certificatesURI with empty host (%q) cannot be matched against constraints0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZhttp2: push would exceed peer's SETTINGS_MAX_CONCURRENT_STREAMSrequest declared a Content-Length of %d but only wrote %d bytes<h1>HTTP Error 431</h1><p>Request Header Field(s) Too Large</p>repartition.sh - exitCode: %d
+/Users/devadmin/actions-runner/_work/monorepo-dev/monorepo-dev/packages/orka-vm-tools/vm/tools.repartition.go

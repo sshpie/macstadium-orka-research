@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.orkaui.vm.tools.agent</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+      <key>ORKA_VM_TOOLS_PATH</key>
+      <string>/Applications/orka-vm-tools</string>
+    </dict>
+    <key>EnvironmentVariables</key>
+    <dict>
+      <key>ORKA_MODE</key>
+      <string>agent</string>
+      <key>ORKA_AUTOMATICALLY_SET_RESOLUTION</key>
+      <string>1</string>
+    </dict>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Applications/orka-vm-tools/orka-vm-tools</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <dict>
+      <key>SuccessfulExit</key>
+      <false/>
+    </dict>
+    <key>StandardOutPath</key>
+    <string>/Applications/orka-vm-tools/logs/orka-vm-tools-agent.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Applications/orka-vm-tools/logs/orka-vm-tools-agent.log</string>
+</dict>
+</plist>

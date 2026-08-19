@@ -1,0 +1,13 @@
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-08-11 21:24 -0500
+Nmap scan report for aquaessencetoothpaste.com (208.52.170.65)
+Host is up (0.051s latency).
+
+PORT     STATE    SERVICE       VERSION
+22/tcp   open     ssh           OpenSSH 10.0 (protocol 2.0)
+88/tcp   open     kerberos-sec  Heimdal Kerberos (server time: 2026-08-12 02:24:13Z)
+137/tcp  closed   netbios-ns
+3283/tcp open     netassistant?
+5900/tcp filtered vnc
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 13.59 seconds

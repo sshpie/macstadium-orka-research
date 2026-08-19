@@ -1,0 +1,11 @@
+# Large binaries - track via git-lfs or exclude
+binaries/orka3
+binaries/orka3-v3.6.3
+packages/orka-engine-3.5.2.pkg
+packages/orka-vm-tools.pkg
+packages/extracted/orka-engine/Payload
+packages/extracted/orka-engine/usr/local/bin/orka-engine
+packages/extracted/orka-engine/usr/local/libexec/orka-engine.app/Contents/MacOS/com.macstadium.orka-engine.server
+packages/extracted/orka-engine/usr/local/libexec/orka-engine.app/Contents/MacOS/orka-engine
+packages/extracted/orka-engine/usr/local/libexec/orka-engine.app/Contents/Helpers/Orka Engine Runner.app/Contents/MacOS/com.macstadium.orka-engine.runvz
+packages/extracted/orka-vm-tools/Applications/orka-vm-tools/orka-vm-tools
