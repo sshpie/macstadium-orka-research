@@ -1,12 +1,5 @@
 # MacStadium Orka3 — Security Research
 
-**Researcher:** Nicholas Kloster  
-**Period:** 2026-08-11 through 2026-08-19  
-**Method:** Binary RE, public GitHub repo analysis, passive network enumeration, package extraction  
-**Authorization:** No unauthorized access to live systems. All binaries and packages publicly downloadable without credentials.
-
-**Disclosure:** VINCE VRF#26-08-DYBJT submitted 2026-08-18. CERT/CC closed — direct vendor contact required first. Next step: `support@macstadium.com` + `https://support.apple.com/en-us/102549`.
-
 ---
 
 ## Table of Contents
